@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>username</td>
+            <td>productName</td>
+            <td>img</td>
+            <td>quantity</td>
+            <td>price</td>
+            <td>total</td>
+        </tr>
+        <tr th:each="o : ${orderList}">
+            <td th:text="${o.oid}"></td>
+            <td th:text="${o.User.name}"></td>
+            <td th:text="${o.Product.pName}"></td>
+            <td><img th:src="${o.Product.img}" style="width: auto; height: 20px;"></td>
+            <td th:text="${o.quantity}"></td>
+            <td th:text="${o.Product.price}"></td>
+            <td th:text="${o.totalprice}"></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

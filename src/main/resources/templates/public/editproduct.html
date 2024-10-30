@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            margin-bottom: 20px;
+        }
+
+        select {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form th:action="@{/editproduct}" method="post">
+        <input type="hidden" name="pid" th:value="${product.pid}">
+        <input type="text" name="productname" placeholder="productname" th:value="${product.pName}"><br>
+        <!-- <input type="text" name="type" placeholder="type ID"><br> -->
+        <select name="type">
+            <option th:value="${product.TypeProduct.tid}" selected th:text="${product.TypeProduct.tName}"></option>
+            <option th:each="type : ${typelist}" th:value="${type.tid}" th:text="${type.tName}"></option>
+        </select><br>
+        <input type="number" name="price" placeholder="price" th:value="${product.price}"><br>
+        <input type="number" name="quantity" placeholder="quantity" th:value="${product.quantity}"><br>
+        <input type="url" name="img" placeholder="img url" th:value="${product.img}"><br>
+        <button type="submit">submit</button>
+    </form>
+</body>
+
+</html>

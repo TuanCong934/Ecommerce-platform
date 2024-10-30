@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+        select{
+            margin-bottom: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>SIGN UP</h1>
+    <form th:action="@{/signup}" method="post">
+        <input type="text" placeholder="name" name="name"><br>
+        <input type="number" placeholder="age" name="age"><br>
+        <input type="number" placeholder="phone" name="phone"><br>
+        <input type="text" placeholder="email" name="email"><br>
+        <input type="number" placeholder="cccd" name="cccd"><br>
+        <input type="text" placeholder="address" name="address"><br>
+        <input type="text" placeholder="username" name="username"><br>
+        <input type="text" placeholder="password" name="password"><br>
+        <input type="text" placeholder="confirm password" name="cpassword"><br>
+        <select name="role" id="">
+            <option value="U">user</option>
+            <option value="S">seller</option>
+        </select>
+        <button type="submit">sign up</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            margin-bottom: 20px;
+        }
+        select{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form th:action="@{/addproduct}" method="post">
+        <input type="text" name="productname" placeholder="productname"><br>
+        <!-- <input type="text" name="type" placeholder="type ID"><br> -->
+         <select name="type">
+            <option value=""disabled>Select type</option>
+            <option th:each="type : ${typelist}" th:value="${type.tid}" th:text="${type.tName}"></option>
+         </select><br>
+        <input type="number" name="price" placeholder="price"><br>
+        <input type="number" name="quantity" placeholder="quantity"><br>
+        <input type="url" name="img" placeholder="img url"><br>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

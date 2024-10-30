@@ -17,4 +17,7 @@ public class Order {
     public Product product;
     public int quantity;
     public double totalprice;
+    // private int setTotalPrice(Product product, quantity){
+    //     return product.getPrice() * quantity;
+    // }
 }

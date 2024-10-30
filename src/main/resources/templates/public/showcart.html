@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Subtotal</td>
+            <td>Img</td>
+        </tr>
+        <tr th:each="p : ${cartlistmodel}">
+            <td th:text="${p.pid}">ID</td>
+            <td th:text="${p.pName}">Name</td>
+            <td th:text="${p.price}">Price</td>
+            <td>
+                <a th:href="@{/decrease/{id}(id=${p.pid})}">-</a>
+                <input th:value="${p.quantity}" disabled style="width: 30px;">
+                <a th:href="@{/increase/{id}(id=${p.pid})}">+</a>
+            </td>
+            <td th:text="${p.price * p.quantity}">Subtotal</td>
+            <td><img th:src="${p.img}" style="width: auto; height: 50px;"></td><br>           
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td th:text="${session.totalpriceallproduct}"></td>
+        </tr>
+        <a th:href="@{/buyallproduct}">Buy All</a>
+    </table>
+</body>
+</html>
